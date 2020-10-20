@@ -33,7 +33,7 @@ export interface FontColorConfig {
 export interface AutoSaveConfig {
 	waitingTime?: number;
 	// eslint-disable-next-line no-use-before-define
-	save(editor: ckeditor.ClassicEditor): Promise<any>;
+	save(editor: ckeditor.EditorInstance): Promise<any>;
 }
 
 export interface ExtensionsConfig {
@@ -98,7 +98,7 @@ export namespace ckeditor {
 	 * [DataApi interface](https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_utils_dataapimixin-DataApi.html).
 	 * E.g. the `ClassicEditor`, `InlineEditor`, etc.
 	 */
-	export interface ClassicEditor extends core.editor.utils.DataApi {
+	export interface EditorInstance extends core.editor.utils.DataApi {
 		readonly commands: core.CommandCollection;
 		readonly config: ckutils.Config;
 		readonly conversion: conversion.Conversion;
@@ -138,14 +138,22 @@ export namespace ckeditor {
 	/**
 	 * The CKEditor5 editor constructor.
 	 */
-	export interface ClassicBuild {
+	export interface EditorBuild {
 		// new (sourceElementOrData: HTMLElement | string, config?: EditorConfig): Promise<ClassicEditor>;
 		builtinPlugins: Array<Plugin<any>>;
 		defaultConfig: EditorConfig;
-		create(sourceElementOrData: HTMLElement | string, config?: EditorConfig): Promise<ClassicEditor>;
+		create(sourceElementOrData: HTMLElement | string, config?: EditorConfig): Promise<EditorInstance>;
+	}
+
+	export interface CKEditor {
+	  ClassicBuild: EditorBuild;
+	  InlineBuild: EditorBuild;
+	  // BalloonBuild: EditorBuild;
+	  // BalloonBlockBuild: EditorBuild;
+	  // DocumentBuild: EditorBuild;
 	}
 }
 
-declare const ClassicBuild: ckeditor.ClassicBuild;
+declare const CKEditor: ckeditor.CKEditor;
 
-export default ClassicBuild;
+export default CKEditor;
