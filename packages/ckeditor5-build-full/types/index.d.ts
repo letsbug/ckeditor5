@@ -148,9 +148,9 @@ export namespace ckeditor {
 	export interface CKEditor {
 	  ClassicBuild: EditorBuild;
 	  InlineBuild: EditorBuild;
-	  // BalloonBuild: EditorBuild;
-	  // BalloonBlockBuild: EditorBuild;
-	  // DocumentBuild: EditorBuild;
+	  BalloonBuild: EditorBuild;
+	  BalloonBlockBuild: EditorBuild;
+	  DocumentBuild: EditorBuild;
 	}
 }
 
