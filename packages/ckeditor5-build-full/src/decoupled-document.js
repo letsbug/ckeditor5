@@ -38,6 +38,17 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
+// custom requires plugins
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import IndentFirst from '@hlw/ckeditor5-plugins/src/indent-first/indentfirst';
+import LineHeight from '@hlw/ckeditor5-plugins/src/line-height/lineheight';
+import Extensions from '@hlw/ckeditor5-plugins/src/extensions/extensions';
+
+
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
 // Plugins to include in the build.
@@ -72,13 +83,26 @@ DecoupledEditor.builtinPlugins = [
   PasteFromOffice,
   Table,
   TableToolbar,
-  TextTransformation
+  TextTransformation,
+
+  // custom build plugins.
+  IndentFirst,
+  ImageResize,
+  LinkImage,
+  LineHeight,
+  Subscript,
+  Superscript,
+  RemoveFormat,
+  Extensions,
 ];
 
 // Editor configuration.
 DecoupledEditor.defaultConfig = {
   toolbar: {
 	items: [
+	  'undo',
+	  'redo',
+	  '|',
 	  'heading',
 	  '|',
 	  'fontfamily',
@@ -105,23 +129,53 @@ DecoupledEditor.defaultConfig = {
 	  'insertTable',
 	  'mediaEmbed',
 	  '|',
-	  'undo',
-	  'redo'
-	]
+	  'removeFormat',
+	],
+	shouldNotGroupWhenFull: true,
+  },
+  fontSize: {
+	options: [12, 'default', 16, 18, 20, 24, 28, 32, 36, 42],
   },
   image: {
-	styles: [
-	  'full',
-	  'alignLeft',
-	  'alignRight'
+	styles: ['alignLeft', 'alignCenter', 'alignRight', 'full', 'side'],
+	resizeOptions: [
+	  {
+		name: 'imageResize:original',
+		value: null,
+		icon: 'original',
+	  },
+	  {
+		name: 'imageResize:50',
+		value: '50',
+		icon: 'medium',
+	  },
+	  {
+		name: 'imageResize:75',
+		value: '75',
+		icon: 'large',
+	  },
 	],
 	toolbar: [
-	  'imageStyle:alignLeft',
 	  'imageStyle:full',
+	  'imageStyle:side',
+	  '|',
+	  'imageStyle:alignLeft',
+	  'imageStyle:alignCenter',
 	  'imageStyle:alignRight',
 	  '|',
-	  'imageTextAlternative'
-	]
+	  'imageResize:50',
+	  'imageResize:75',
+	  'imageResize:original',
+	  '|',
+	  'imageTextAlternative',
+	  '|',
+	  'linkImage',
+	],
+	upload: {
+	  panel: {
+		items: ['insertImageViaUrl'],
+	  },
+	},
   },
   table: {
 	contentToolbar: [
@@ -131,5 +185,5 @@ DecoupledEditor.defaultConfig = {
 	]
   },
   // This value must be kept in sync with the language defined in webpack.config.js.
-  language: 'en'
+  language: 'zh-cn'
 };

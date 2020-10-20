@@ -37,139 +37,136 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
-import ImageResizeEditing from '@ckeditor/ckeditor5-image/src/imageresize/imageresizeediting';
-import ImageResizeButtons from '@ckeditor/ckeditor5-image/src/imageresize/imageresizebuttons';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import IndentFirst from '@hlw/ckeditor5-plugins/src/indent-first/indentfirst';
 import LineHeight from '@hlw/ckeditor5-plugins/src/line-height/lineheight';
 import Extensions from '@hlw/ckeditor5-plugins/src/extensions/extensions';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase {
+}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-	Essentials,
-	Autoformat,
-	Bold,
-	Italic,
-	BlockQuote,
-	CKFinder,
-	EasyImage,
-	Heading,
-	Image,
-	ImageCaption,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
-	Link,
-	List,
-	MediaEmbed,
-	Paragraph,
-	PasteFromOffice,
-	Table,
-	TableToolbar,
-	TextTransformation,
+  Essentials,
+  Autoformat,
+  Bold,
+  Italic,
+  BlockQuote,
+  CKFinder,
+  EasyImage,
+  Heading,
+  Image,
+  ImageCaption,
+  ImageStyle,
+  ImageToolbar,
+  ImageUpload,
+  Link,
+  List,
+  MediaEmbed,
+  Paragraph,
+  PasteFromOffice,
+  Table,
+  TableToolbar,
+  TextTransformation,
 
-	// custom build plugins.
-	Underline,
-	Strikethrough,
-	Subscript,
-	Superscript,
-	Font,
-	Alignment,
-	RemoveFormat,
-	ImageResize,
-	ImageResizeEditing,
-	ImageResizeButtons,
-	LinkImage,
-	IndentFirst,
-	LineHeight,
-	Extensions,
+  // custom build plugins.
+  Underline,
+  Strikethrough,
+  Subscript,
+  Superscript,
+  Font,
+  Alignment,
+  RemoveFormat,
+  ImageResize,
+  LinkImage,
+  IndentFirst,
+  LineHeight,
+  Extensions
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-	toolbar: {
-		items: [
-			'undo',
-			'redo',
-			'|',
-			'heading',
-			'|',
-			'fontSize',
-			'fontFamily',
-			'fontColor',
-			'fontBackgroundColor',
-			'|',
-			'bold',
-			'italic',
-			'underline',
-			'strikethrough',
-			'bulletedList',
-			'numberedList',
-			'|',
-			'lineHeight',
-			'indentFirst',
-			'alignment',
-			'|',
-			'link',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'|',
-			'removeFormat',
-		],
-		shouldNotGroupWhenFull: true,
-	},
-	fontSize: {
-		options: [12, 14, 'default', 18, 20, 24],
-	},
-	image: {
-		styles: ['alignLeft', 'alignCenter', 'alignRight', 'full', 'side'],
-		resizeOptions: [
-			{
-				name: 'imageResize:original',
-				value: null,
-				icon: 'original',
-			},
-			{
-				name: 'imageResize:50',
-				value: '50',
-				icon: 'medium',
-			},
-			{
-				name: 'imageResize:75',
-				value: '75',
-				icon: 'large',
-			},
-		],
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageStyle:alignLeft',
-			'imageStyle:alignCenter',
-			'imageStyle:alignRight',
-			'|',
-			'imageResize:50',
-			'imageResize:75',
-			'imageResize:original',
-			'|',
-			'imageTextAlternative',
-			'|',
-			'linkImage',
-		],
-		upload: {
-			panel: {
-				items: ['insertImageViaUrl'],
-			},
-		},
-	},
-	table: {
-		contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
-	},
+  toolbar: {
+	items: [
+	  'undo',
+	  'redo',
+	  '|',
+	  'heading',
+	  '|',
+	  'fontFamily',
+	  'fontSize',
+	  'fontColor',
+	  'fontBackgroundColor',
+	  '|',
+	  'bold',
+	  'italic',
+	  'underline',
+	  'strikethrough',
+	  'bulletedList',
+	  'numberedList',
+	  '|',
+	  'lineHeight',
+	  'indentFirst',
+	  'alignment',
+	  '|',
+	  'link',
+	  'imageUpload',
+	  'blockQuote',
+	  'insertTable',
+	  'mediaEmbed',
+	  '|',
+	  'removeFormat'
+	],
+	shouldNotGroupWhenFull: true
+  },
+  fontSize: {
+	options: [12, 'default', 16, 18, 20, 24, 28, 32, 36, 42]
+  },
+  image: {
+	styles: ['alignLeft', 'alignCenter', 'alignRight', 'full', 'side'],
+	resizeOptions: [
+	  {
+		name: 'imageResize:original',
+		value: null,
+		icon: 'original'
+	  },
+	  {
+		name: 'imageResize:50',
+		value: '50',
+		icon: 'medium'
+	  },
+	  {
+		name: 'imageResize:75',
+		value: '75',
+		icon: 'large'
+	  }
+	],
+	toolbar: [
+	  'imageStyle:full',
+	  'imageStyle:side',
+	  '|',
+	  'imageStyle:alignLeft',
+	  'imageStyle:alignCenter',
+	  'imageStyle:alignRight',
+	  '|',
+	  'imageResize:50',
+	  'imageResize:75',
+	  'imageResize:original',
+	  '|',
+	  'imageTextAlternative',
+	  '|',
+	  'linkImage'
+	],
+	upload: {
+	  panel: {
+		items: ['insertImageViaUrl']
+	  }
+	}
+  },
+  table: {
+	contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+  },
 
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'zh-cn',
+  // This value must be kept in sync with the language defined in webpack.config.js.
+  language: 'zh-cn'
 };

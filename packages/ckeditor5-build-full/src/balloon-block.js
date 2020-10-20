@@ -30,6 +30,9 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
+// custom requires plugins
+import Extensions from '@hlw/ckeditor5-plugins/src/extensions/extensions';
+
 import '../theme/theme.css';
 
 export default class BalloonEditor extends BalloonEditorBase {}
@@ -58,7 +61,10 @@ BalloonEditor.builtinPlugins = [
   PasteFromOffice,
   Table,
   TableToolbar,
-  TextTransformation
+  TextTransformation,
+
+  // custom build plugins.
+  Extensions
 ];
 
 // Editor configuration.
@@ -103,5 +109,5 @@ BalloonEditor.defaultConfig = {
 	]
   },
   // This value must be kept in sync with the language defined in webpack.config.js.
-  language: 'en'
+  language: 'zh-cn'
 };
