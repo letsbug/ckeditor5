@@ -11,7 +11,6 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
@@ -31,6 +30,17 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 
 // custom requires plugins
 import Extensions from '@hlw/ckeditor5-plugins/src/extensions/extensions';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import IndentFirst from '@hlw/ckeditor5-plugins/src/indent-first/indentfirst';
+import LineHeight from '@hlw/ckeditor5-plugins/src/line-height/lineheight';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -41,7 +51,6 @@ InlineEditor.builtinPlugins = [
   Bold,
   Italic,
   BlockQuote,
-  CKFinder,
   EasyImage,
   Heading,
   Image,
@@ -60,7 +69,18 @@ InlineEditor.builtinPlugins = [
   TextTransformation,
 
   // custom build plugins.
-  Extensions
+  Font,
+  Underline,
+  Strikethrough,
+  IndentFirst,
+  LineHeight,
+  Alignment,
+  ImageResize,
+  LinkImage,
+  RemoveFormat,
+  Subscript,
+  Superscript,
+  Extensions,
 ];
 
 // Editor configuration.
