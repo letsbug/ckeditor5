@@ -106,6 +106,9 @@ InlineEditor.defaultConfig = {
 	  'redo'
 	]
   },
+  fontSize: {
+	options: [12, 'default', 16, 18, 20, 24, 28, 32, 36, 42],
+  },
   image: {
 	toolbar: [
 	  'imageStyle:full',

@@ -16,8 +16,9 @@ BalloonEditor.defaultConfig = {
 	'bulletedList',
 	'numberedList',
 	'|',
-	'indent',
-	'outdent',
+	'lineHeight',
+	'indentFirst',
+	'alignment',
 	'|',
 	'imageUpload',
 	'blockQuote',
@@ -31,8 +32,13 @@ BalloonEditor.defaultConfig = {
 	items: [
 	  'bold',
 	  'italic',
+	  'underline',
+	  'strikethrough',
 	  'link'
 	]
+  },
+  fontSize: {
+	options: [12, 'default', 16, 18, 20, 24, 28, 32, 36, 42],
   },
   image: {
 	toolbar: [
