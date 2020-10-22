@@ -51,6 +51,10 @@ export interface ImageConfig {
 	upload?: any;
 }
 
+export interface LineHeightConfig {
+  options?: number[];
+}
+
 export interface ComponentFactory {
 	add(name: string, callback: (...args: any) => any): void;
 	has(name: string): boolean;
@@ -83,6 +87,7 @@ export namespace ckeditor {
 		typing?: core.TypingConfig;
 		extraPlugins?: any[];
 		simpleUpload?: SimpleUploadConfig;
+		lineHeight?: LineHeightConfig;
 		wordCount?: WordCountConfig;
 		title?: { placeholder?: string };
 		placeholder?: string;
