@@ -1,5 +1,5 @@
-// import { findOptimalInsertionPosition } from '@ckeditor/ckeditor5-widget/src/utils';
-//
-// export default {
-//   findOptimalInsertionPosition
-// }
+import { findOptimalInsertionPosition } from '@ckeditor/ckeditor5-widget/src/utils';
+
+export default {
+  findOptimalInsertionPosition
+}
