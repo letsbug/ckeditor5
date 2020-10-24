@@ -156,6 +156,9 @@ export namespace ckeditor {
 	  BalloonBuild: EditorBuild;
 	  BalloonBlockBuild: EditorBuild;
 	  DocumentBuild: EditorBuild;
+	  utils: {
+		findOptimalInsertionPosition: (selection: engine.model.DocumentSelection, model: model.Model) => engine.model.Position;
+	  }
 	}
 }
 

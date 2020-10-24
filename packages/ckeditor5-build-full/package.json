@@ -31,6 +31,7 @@
     "@ckeditor/ckeditor5-core": "^23.0.0",
     "@ckeditor/ckeditor5-engine": "^23.0.0",
     "@ckeditor/ckeditor5-ui": "^23.0.0",
+    "@ckeditor/ckeditor5-widget": "^23.0.0",
     "@types/ckeditor__ckeditor5-core": "^11.0.3"
   },
   "devDependencies": {

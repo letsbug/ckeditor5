@@ -87,3 +87,5 @@ export namespace upload {
 		// TODO
 	}
 }
+
+// declare const utils
