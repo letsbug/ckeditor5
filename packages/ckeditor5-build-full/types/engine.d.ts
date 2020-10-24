@@ -96,7 +96,6 @@ export namespace model {
 export namespace view {
 	class View extends engine.view.View {
 		focus(): void;
-		blur(): void;
 		document: engine.view.Document;
 	}
 }
