@@ -40,7 +40,7 @@ export interface ExtensionsConfig {
 	name: string;
 	label: string;
 	icon: string | SVGElement;
-	command?: (selected?: Array<engine.view.Node>) => any;
+	command?: (selected?: engine.model.Element) => any;
 	target?: 'base' | 'image' | 'table';
 }
 
